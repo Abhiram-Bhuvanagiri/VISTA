@@ -39,8 +39,8 @@ export default function Stats() {
   }, []);
 
   return (
-    <section ref={ref} className="w-full bg-[#1a1814] py-24 md:py-32 px-8 md:px-24">
-      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-0 divide-y-2 md:divide-y-0 md:divide-x divide-white/10">
+    <section ref={ref} className="w-full bg-[#1a1814] py-24 md:py-32 px-4 sm:px-8 md:px-24">
+      <div className="max-w-7xl 2xl:max-w-screen-2xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x divide-white/10">
         {stats.map((s, i) => (
           <div key={i} className="stat-item flex flex-col items-center justify-center py-8 md:py-0 gap-3 group cursor-default">
             <span className="text-[clamp(2.5rem,5vw,4.5rem)] font-light text-white leading-none tracking-tight group-hover:text-[#c8f0b0] transition-colors duration-500">

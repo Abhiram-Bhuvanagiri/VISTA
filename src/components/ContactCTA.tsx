@@ -47,7 +47,7 @@ export default function ContactCTA() {
     <section
       ref={ref}
       id="contact"
-      className="w-full bg-[#f0f9ff] py-32 md:py-44 px-8 md:px-24 overflow-hidden relative min-h-screen flex items-center"
+      className="w-full bg-[#f0f9ff] py-32 md:py-44 px-4 sm:px-8 md:px-24 overflow-hidden relative min-h-screen flex items-center"
     >
       {/* Background Image - Made darker/more visible by increasing opacity */}
       <div 
@@ -57,7 +57,7 @@ export default function ContactCTA() {
       {/* Light gradient overlay - Reduced opacity to let image show through */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#ffffff]/60 via-[#f0f9ff]/50 to-[#e0f2fe]/70 pointer-events-none" />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto">
+      <div className="relative z-10 w-full max-w-7xl 2xl:max-w-screen-2xl mx-auto">
         {/* ── Two-column layout ── */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 lg:gap-20 items-center">
 
@@ -116,7 +116,7 @@ export default function ContactCTA() {
             <div className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] border border-[#e2e8f0] shadow-2xl shadow-[#1e293b]/10 overflow-hidden">
 
               {/* Card header bar */}
-              <div className="px-12 pt-12 pb-8 border-b border-[#e2e8f0]">
+              <div className="px-6 sm:px-12 pt-8 sm:pt-12 pb-8 border-b border-[#e2e8f0]">
                 <p className="text-[10px] font-light uppercase tracking-[0.3em] text-[#94a3b8] mb-4 flex items-center gap-3">
                   <span className="w-8 h-px bg-[#94a3b8]" />
                   Enquiry Form
@@ -130,7 +130,7 @@ export default function ContactCTA() {
               </div>
 
               {/* Form body */}
-              <div className="px-14 py-14">
+              <div className="px-6 sm:px-14 py-10 sm:py-14">
                 {submitted ? (
                   <div className="flex flex-col items-center justify-center text-center py-20 gap-8">
                     <div className="w-20 h-20 rounded-full bg-[#f0f9ff] border border-[#bae6fd] flex items-center justify-center">
@@ -213,15 +213,15 @@ export default function ContactCTA() {
                     </div>
 
                     {/* Submit */}
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-4">
+                    <div className="flex flex-col sm:flex-row items-center gap-6 pt-4">
                       <button
                         type="submit"
-                        className="group inline-flex items-center gap-3 bg-[#2563eb] text-white text-sm font-medium tracking-widest uppercase px-10 py-4 rounded-full hover:bg-[#1d4ed8] transition-colors duration-300 flex-shrink-0 shadow-lg shadow-blue-500/30"
+                        className="group flex items-center justify-center gap-3 bg-[#2563eb] text-white text-sm font-medium tracking-widest uppercase w-full sm:w-auto px-8 sm:px-10 py-4 rounded-full hover:bg-[#1d4ed8] transition-colors duration-300 shadow-lg shadow-blue-500/30"
                       >
                         Send Enquiry
                         <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300" />
                       </button>
-                      <p className="text-[11px] text-[#94a3b8] font-light leading-relaxed">
+                      <p className="text-[11px] text-[#94a3b8] font-light leading-relaxed text-center sm:text-left">
                         We respect your privacy.<br className="hidden sm:block" /> No spam, ever. Unsubscribe any time.
                       </p>
                     </div>

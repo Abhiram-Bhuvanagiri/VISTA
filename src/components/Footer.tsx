@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="relative w-full bg-[#0e0c0a] text-white overflow-hidden">
       {/* ─── Footer Content ─── */}
-      <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-24 py-16">
+      <div className="relative z-10 max-w-7xl 2xl:max-w-screen-2xl mx-auto px-4 sm:px-8 md:px-24 py-16">
         {/* Top row */}
         <div className="flex flex-col md:flex-row justify-between gap-16 pb-16 border-b border-white/10">
           {/* Brand */}
@@ -56,9 +56,21 @@ export default function Footer() {
         </div>
 
         {/* Bottom row */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-10 text-xs text-white/25">
-          <p>© {new Date().getFullYear()} Vista Travel Agency. All rights reserved.</p>
-          <p className="tracking-widest uppercase">Crafted for the discerning traveler</p>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-10 text-xs text-center md:text-left">
+          <p className="text-white/30">© {new Date().getFullYear()} Vista Travel Agency. All rights reserved.</p>
+          
+          {/* Recruiter Callout Badge */}
+          <div className="group relative">
+            <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-[#d4af37] via-white to-[#d4af37] opacity-20 group-hover:opacity-60 blur transition duration-500" />
+            <div className="relative flex items-center gap-2 px-5 py-2 bg-[#0e0c0a] rounded-full border border-white/10 group-hover:border-[#d4af37]/50 transition-colors duration-300 cursor-pointer">
+              <span className="text-white/40 tracking-[0.2em] uppercase text-[9px]">Designed & Engineered by</span>
+              <span className="font-medium text-white tracking-wide">Abhiram Bhuvanagiri</span>
+              <span className="relative flex h-2 w-2 ml-1">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#d4af37] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#d4af37]"></span>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

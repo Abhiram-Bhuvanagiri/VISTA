@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={outfit.variable}>
-      <body className="antialiased">
+      <body className="antialiased overflow-x-hidden">
         <SmoothScroll>
           {children}
         </SmoothScroll>

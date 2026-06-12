@@ -7,63 +7,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const destinations = [
-  {
-    id: 1,
-    title: "The Swiss Alps",
-    country: "Switzerland",
-    tag: "Mountain Escape",
-    duration: "7–14 Days",
-    image:
-      "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?q=80&w=1800&auto=format&fit=crop",
-  },
-  {
-    id: 2,
-    title: "Santorini",
-    country: "Greece",
-    tag: "Island Paradise",
-    duration: "5–10 Days",
-    image:
-      "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1800&auto=format&fit=crop",
-  },
-  {
-    id: 3,
-    title: "Kyoto",
-    country: "Japan",
-    tag: "Cultural Immersion",
-    duration: "7–12 Days",
-    image:
-      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1800&auto=format&fit=crop",
-  },
-  {
-    id: 4,
-    title: "Amalfi Coast",
-    country: "Italy",
-    tag: "Coastal Luxury",
-    duration: "6–10 Days",
-    image:
-      "https://images.unsplash.com/photo-1612698093158-e07ac200d44e?q=80&w=1800&auto=format&fit=crop",
-  },
-  {
-    id: 5,
-    title: "Bali",
-    country: "Indonesia",
-    tag: "Tropical Sanctuary",
-    duration: "8–14 Days",
-    image:
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1800&auto=format&fit=crop",
-  },
-  {
-    id: 6,
-    title: "Patagonia",
-    country: "Argentina",
-    tag: "Wilderness Adventure",
-    duration: "10–21 Days",
-    image:
-      "https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=1800&auto=format&fit=crop",
-  },
-];
-
+import Link from "next/link";
+import { destinations } from "../data/destinations";
 function DestCard({
   dest,
 }: {
@@ -75,53 +20,46 @@ function DestCard({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group relative flex flex-col overflow-hidden rounded-2xl bg-gray-100 aspect-[3/4] cursor-pointer select-none"
+      className="group flex flex-col cursor-pointer select-none"
     >
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-110"
-        style={{ backgroundImage: `url(${dest.image})` }}
-      />
-
-      {/* Dark gradient always present at bottom */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10" />
-
-      {/* Top pill tag */}
-      <div className="absolute top-5 left-5 z-20">
-        <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm text-white text-[10px] font-medium tracking-widest uppercase px-3 py-1.5 rounded-full border border-white/20">
-          <MapPin className="w-2.5 h-2.5" />
-          {dest.tag}
-        </span>
+      {/* Image Container */}
+      <div className="relative w-full aspect-[4/5] overflow-hidden rounded-3xl mb-6 shadow-sm">
+        <div
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105"
+          style={{ backgroundImage: `url(${dest.image})` }}
+        />
+        
+        <div className="absolute top-5 left-5 z-20">
+          <span className="inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-md text-white text-[10px] font-medium tracking-widest uppercase px-3 py-1.5 rounded-full border border-white/20 shadow-lg">
+            <MapPin className="w-3 h-3" />
+            {dest.tag}
+          </span>
+        </div>
+        
+        {/* Subtle overlay */}
+        <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10" />
       </div>
 
-      {/* Bottom content */}
-      <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
-        {/* Duration — slides up on hover */}
-        <p
-          className={`text-[10px] uppercase tracking-[0.25em] text-white/50 mb-2 transition-all duration-500 ${
-            hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-          }`}
-        >
-          {dest.duration}
-        </p>
-
-        <h3 className="text-2xl md:text-3xl font-medium leading-tight">{dest.title}</h3>
-        <p className="text-sm text-white/60 mt-1">{dest.country}</p>
-
-        {/* Animated underline */}
-        <div className="mt-5 flex items-center justify-between">
-          <div
-            className={`h-px bg-white/40 transition-all duration-700 ${
-              hovered ? "w-full" : "w-0"
-            }`}
-          />
-          <div
-            className={`ml-4 w-8 h-8 rounded-full bg-white flex items-center justify-center flex-shrink-0 transition-all duration-500 ${
-              hovered ? "opacity-100 scale-100" : "opacity-0 scale-50"
-            }`}
-          >
-            <ArrowRight className="w-4 h-4 text-[#1a1814]" />
+      {/* Info Container */}
+      <div className="flex flex-col px-2">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h3 className="text-2xl font-light text-[#1a1814] mb-1 group-hover:text-[#6a6560] transition-colors duration-300">
+              {dest.title}
+            </h3>
+            <p className="text-sm text-[#9a958e] font-medium tracking-wide">
+              {dest.country}
+            </p>
           </div>
+          
+          <div className="flex items-center justify-center w-10 h-10 rounded-full border border-[#e8e4de] text-[#1a1814] group-hover:bg-[#1a1814] group-hover:text-white transition-all duration-300 shrink-0">
+             <ArrowRight className="w-4 h-4 -rotate-45 group-hover:rotate-0 transition-transform duration-500 ease-out" />
+          </div>
+        </div>
+        
+        <div className="mt-5 pt-5 border-t border-[#e8e4de]/60 flex items-center justify-between">
+           <span className="text-[11px] uppercase tracking-[0.25em] text-[#6a6560] font-semibold">{dest.duration}</span>
+           <span className="text-[10px] uppercase tracking-widest text-[#1a1814] font-bold group-hover:tracking-[0.3em] transition-all duration-300">Explore</span>
         </div>
       </div>
     </div>
@@ -173,11 +111,11 @@ export default function Places() {
     <section
       id="places"
       ref={sectionRef}
-      className="w-full bg-[#fdfcfa] py-32 md:py-48 px-8 md:px-24"
+      className="w-full bg-[#fdfcfa] pb-32 pt-12 md:pb-48 md:pt-12 px-4 sm:px-8 md:px-24"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl 2xl:max-w-screen-2xl mx-auto">
         {/* Header */}
-        <div className="places-header flex flex-col md:flex-row md:items-end justify-between gap-8 mb-36">
+        <div className="places-header flex flex-col md:flex-row md:items-end justify-between gap-8 mb-40 md:mb-[18rem]">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-[#9a958e] mb-6 flex items-center gap-3">
               <span className="w-8 h-px bg-[#9a958e]" />
@@ -193,11 +131,11 @@ export default function Places() {
         </div>
 
         {/* Cards grid — 3 col on desktop */}
-        <div className="dest-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="dest-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
           {destinations.map((d) => (
-            <div key={d.id} className="dest-card">
+            <Link href={`/destinations/${d.id}`} key={d.id} className="dest-card block">
               <DestCard dest={d} />
-            </div>
+            </Link>
           ))}
         </div>
 

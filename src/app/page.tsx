@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSequence from "@/components/HeroSequence";
 import AboutUs from "@/components/AboutUs";
-import Services from "@/components/Services";
 import Places from "@/components/Places";
 import Testimonials from "@/components/Testimonials";
 import ContactCTA from "@/components/ContactCTA";
@@ -19,9 +18,6 @@ export default function Home() {
 
       {/* Light content sections */}
       <AboutUs />
-
-      <div className="w-full h-16 md:h-32 bg-[#fdfcfa]"></div>
-      <Services />
 
       <div className="w-full h-16 md:h-32 bg-[#fdfcfa]"></div>
       <Places />

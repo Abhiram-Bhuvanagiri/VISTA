@@ -106,9 +106,9 @@ export default function AboutUs() {
     <section
       id="about"
       ref={sectionRef}
-      className="w-full bg-[#fdfcfa] py-16 md:py-24 px-8 md:px-24"
+      className="w-full bg-[#fdfcfa] py-16 md:py-24 px-4 sm:px-8 md:px-24"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl 2xl:max-w-screen-2xl mx-auto">
         {/* Top label */}
         <p className="about-tag text-xs uppercase tracking-[0.3em] text-[#9a958e] mb-20 flex items-center gap-3">
           <span className="w-8 h-px bg-[#9a958e]" />
@@ -145,7 +145,7 @@ export default function AboutUs() {
             </p>
 
             {/* Key differentiators */}
-            <div className="about-body grid grid-cols-3 gap-6 pt-4 border-t border-[#e8e4de]">
+            <div className="about-body grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 border-t border-[#e8e4de]">
               {[
                 { icon: "◈", label: "White-Glove", sub: "Concierge" },
                 { icon: "◇", label: "100% Bespoke", sub: "Itineraries" },
@@ -159,19 +159,19 @@ export default function AboutUs() {
               ))}
             </div>
 
-            <div className="about-body flex items-center gap-4 mt-2">
+            <div className="about-body flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-2">
               <button className="inline-flex items-center gap-3 bg-[#1a1814] text-white text-xs font-semibold tracking-widest uppercase px-8 py-4 rounded-full hover:bg-[#3a3630] transition-colors duration-300">
                 Discover Our Story
                 <span>→</span>
               </button>
-              <button className="text-xs font-medium tracking-widest uppercase text-[#6a6560] hover:text-[#1a1814] transition-colors duration-300 underline underline-offset-4">
+              <button className="text-xs font-medium tracking-widest uppercase text-[#6a6560] hover:text-[#1a1814] transition-colors duration-300 underline underline-offset-4 mt-2 sm:mt-0">
                 Meet the Team
               </button>
             </div>
           </div>
 
           {/* Right – Image stack */}
-          <div className="about-img-wrap relative w-full h-[500px] lg:h-[680px]">
+          <div className="about-img-wrap relative w-full h-[400px] sm:h-[500px] lg:h-[680px] 2xl:h-[800px] mt-10 lg:mt-0">
             {/* Main image */}
             <div
               className="absolute top-0 left-0 right-0 bottom-0 rounded-3xl overflow-hidden"
@@ -183,23 +183,23 @@ export default function AboutUs() {
               }}
             />
             {/* Floating stat card */}
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-2xl z-10 about-stats">
-              <div className="flex gap-8">
+            <div className="absolute -bottom-4 -left-2 sm:-bottom-6 sm:-left-6 bg-white rounded-2xl p-4 sm:p-6 shadow-2xl z-10 about-stats">
+              <div className="flex gap-4 sm:gap-8">
                 {[
                   { n: "12K+", l: "Travelers" },
                   { n: "80+", l: "Destinations" },
                 ].map((s) => (
                   <div key={s.l} className="about-stat flex flex-col">
-                    <span className="text-3xl font-light text-[#1a1814]">{s.n}</span>
-                    <span className="text-xs uppercase tracking-widest text-[#9a958e] mt-1">{s.l}</span>
+                    <span className="text-2xl sm:text-3xl font-light text-[#1a1814]">{s.n}</span>
+                    <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[#9a958e] mt-1">{s.l}</span>
                   </div>
                 ))}
               </div>
             </div>
             {/* Small top-right floating badge */}
-            <div className="absolute -top-4 right-4 bg-[#1a1814] text-white rounded-2xl px-6 py-4 z-10 shadow-xl about-stat">
-              <p className="text-xs uppercase tracking-widest text-white/50 mb-1">Since</p>
-              <p className="text-2xl font-light">2009</p>
+            <div className="absolute -top-4 -right-2 sm:-top-4 sm:right-4 bg-[#1a1814] text-white rounded-2xl px-4 py-3 sm:px-6 sm:py-4 z-10 shadow-xl about-stat">
+              <p className="text-[10px] sm:text-xs uppercase tracking-widest text-white/50 mb-1">Since</p>
+              <p className="text-xl sm:text-2xl font-light">2009</p>
             </div>
           </div>
         </div>

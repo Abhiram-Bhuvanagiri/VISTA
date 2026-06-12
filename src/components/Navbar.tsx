@@ -18,13 +18,13 @@ export default function Navbar() {
 
     const handleScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const links = [
     { label: "Home", href: "/" },
     { label: "About", href: "#about" },
-    { label: "Services", href: "#services" },
     { label: "Places", href: "#places" },
     { label: "Contact", href: "#contact" },
   ];
@@ -33,34 +33,31 @@ export default function Navbar() {
     <>
       <nav
         ref={navRef}
-        className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
-          scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-sm py-4"
-            : "bg-transparent py-6"
-        }`}
+        className={`fixed top-0 left-0 w-full z-[100] transition-[padding,background-color,backdrop-filter,box-shadow] duration-500 transform-gpu ${scrolled
+            ? "bg-white/95 backdrop-blur-md shadow-sm py-6"
+            : "bg-transparent py-12"
+          }`}
       >
-        <div className="max-w-7xl mx-auto px-8 md:px-12 flex items-center justify-between">
+        <div className="max-w-7xl 2xl:max-w-screen-2xl mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
-            className={`text-xl font-bold tracking-[0.25em] uppercase transition-colors duration-500 ${
-              scrolled ? "text-[#1a1814]" : "text-white"
-            }`}
+            className={`text-5xl font-bold tracking-[0.25em] uppercase transition-colors duration-500 ${scrolled ? "text-[#1a1814]" : "text-white"
+              }`}
           >
             Vista
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden md:flex items-center gap-14">
             {links.map((l) => (
               <Link
                 key={l.label}
                 href={l.href}
-                className={`text-xs font-medium tracking-[0.2em] uppercase transition-colors duration-300 ${
-                  scrolled
+                className={`text-sm font-medium tracking-[0.2em] uppercase transition-colors duration-300 ${scrolled
                     ? "text-[#6a6560] hover:text-[#1a1814]"
                     : "text-white/70 hover:text-white"
-                }`}
+                  }`}
               >
                 {l.label}
               </Link>
@@ -69,11 +66,10 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <button
-            className={`hidden md:inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase px-6 py-3 rounded-full border transition-all duration-300 ${
-              scrolled
+            className={`hidden md:inline-flex items-center gap-3 text-sm font-semibold tracking-widest uppercase px-12 py-6 rounded-full border-[1.5px] transition-all duration-300 ${scrolled
                 ? "border-[#1a1814] text-[#1a1814] hover:bg-[#1a1814] hover:text-white"
                 : "border-white/50 text-white hover:bg-white hover:text-[#1a1814]"
-            }`}
+              }`}
           >
             Book Now
           </button>
@@ -81,23 +77,20 @@ export default function Navbar() {
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden flex flex-col gap-[5px] z-50 p-2"
+            className="md:hidden flex flex-col gap-[7px] z-50 p-3"
             aria-label="Toggle menu"
           >
             <span
-              className={`w-6 h-[1.5px] block transition-all duration-300 ${
-                menuOpen ? "rotate-45 translate-y-[6.5px]" : ""
-              } ${scrolled || menuOpen ? "bg-[#1a1814]" : "bg-white"}`}
+              className={`w-8 h-[2px] block transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[9px]" : ""
+                } ${scrolled || menuOpen ? "bg-[#1a1814]" : "bg-white"}`}
             />
             <span
-              className={`w-6 h-[1.5px] block transition-all duration-300 ${
-                menuOpen ? "opacity-0" : ""
-              } ${scrolled ? "bg-[#1a1814]" : "bg-white"}`}
+              className={`w-8 h-[2px] block transition-all duration-300 ${menuOpen ? "opacity-0" : ""
+                } ${scrolled ? "bg-[#1a1814]" : "bg-white"}`}
             />
             <span
-              className={`w-6 h-[1.5px] block transition-all duration-300 ${
-                menuOpen ? "-rotate-45 -translate-y-[6.5px]" : ""
-              } ${scrolled || menuOpen ? "bg-[#1a1814]" : "bg-white"}`}
+              className={`w-8 h-[2px] block transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[9px]" : ""
+                } ${scrolled || menuOpen ? "bg-[#1a1814]" : "bg-white"}`}
             />
           </button>
         </div>
@@ -105,9 +98,10 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-[90] bg-[#fdfcfa] flex flex-col items-center justify-center transition-all duration-500 md:hidden ${
-          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 z-[90] bg-[#fdfcfa] flex flex-col items-center justify-center transition-all duration-500 md:hidden ${menuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+          }`}
       >
         <div className="flex flex-col items-center gap-10">
           {links.map((l) => (
