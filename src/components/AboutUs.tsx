@@ -106,7 +106,7 @@ export default function AboutUs() {
     <section
       id="about"
       ref={sectionRef}
-      className="w-full bg-[#fdfcfa] py-16 md:py-24 px-4 sm:px-8 md:px-24"
+      className="w-full bg-[#fdfcfa] py-[5px] px-4 sm:px-8 md:px-24"
     >
       <div className="max-w-7xl 2xl:max-w-screen-2xl mx-auto">
         {/* Top label */}
@@ -145,33 +145,23 @@ export default function AboutUs() {
             </p>
 
             {/* Key differentiators */}
-            <div className="about-body grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 border-t border-[#e8e4de]">
+            <div className="about-body grid grid-cols-1 sm:grid-cols-3 gap-8 pt-6 border-t border-[#e8e4de]">
               {[
                 { icon: "◈", label: "White-Glove", sub: "Concierge" },
                 { icon: "◇", label: "100% Bespoke", sub: "Itineraries" },
                 { icon: "◉", label: "24 / 7", sub: "In-Trip Support" },
               ].map((item) => (
-                <div key={item.label} className="flex flex-col gap-1">
-                  <span className="text-[#9a958e] text-lg">{item.icon}</span>
-                  <span className="text-xs font-semibold tracking-widest uppercase text-[#1a1814]">{item.label}</span>
-                  <span className="text-xs font-light text-[#9a958e] tracking-wide">{item.sub}</span>
+                <div key={item.label} className="flex flex-col gap-2">
+                  <span className="text-[#9a958e] text-3xl">{item.icon}</span>
+                  <span className="text-xl sm:text-2xl font-bold tracking-wider uppercase text-[#1a1814]">{item.label}</span>
+                  <span className="text-base sm:text-lg font-medium text-[#9a958e] tracking-wide">{item.sub}</span>
                 </div>
               ))}
-            </div>
-
-            <div className="about-body flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-2">
-              <button className="inline-flex items-center gap-3 bg-[#1a1814] text-white text-xs font-semibold tracking-widest uppercase px-8 py-4 rounded-full hover:bg-[#3a3630] transition-colors duration-300">
-                Discover Our Story
-                <span>→</span>
-              </button>
-              <button className="text-xs font-medium tracking-widest uppercase text-[#6a6560] hover:text-[#1a1814] transition-colors duration-300 underline underline-offset-4 mt-2 sm:mt-0">
-                Meet the Team
-              </button>
             </div>
           </div>
 
           {/* Right – Image stack */}
-          <div className="about-img-wrap relative w-full h-[400px] sm:h-[500px] lg:h-[680px] 2xl:h-[800px] mt-10 lg:mt-0">
+          <div className="about-img-wrap relative w-full h-[500px] sm:h-[600px] lg:h-[780px] 2xl:h-[900px] mt-10 lg:mt-0">
             {/* Main image */}
             <div
               className="absolute top-0 left-0 right-0 bottom-0 rounded-3xl overflow-hidden"
@@ -183,15 +173,15 @@ export default function AboutUs() {
               }}
             />
             {/* Floating stat card */}
-            <div className="absolute -bottom-4 -left-2 sm:-bottom-6 sm:-left-6 bg-white rounded-2xl p-4 sm:p-6 shadow-2xl z-10 about-stats">
-              <div className="flex gap-4 sm:gap-8">
+            <div className="absolute -bottom-4 left-0 right-0 sm:-bottom-6 sm:-left-6 sm:-right-6 bg-white rounded-3xl sm:rounded-[40px] p-8 sm:p-12 shadow-2xl z-10 about-stats">
+              <div className="flex gap-12 sm:gap-20 justify-around">
                 {[
                   { n: "12K+", l: "Travelers" },
                   { n: "80+", l: "Destinations" },
                 ].map((s) => (
-                  <div key={s.l} className="about-stat flex flex-col">
-                    <span className="text-2xl sm:text-3xl font-light text-[#1a1814]">{s.n}</span>
-                    <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[#9a958e] mt-1">{s.l}</span>
+                  <div key={s.l} className="about-stat flex flex-col items-center">
+                    <span className="text-4xl sm:text-6xl font-light text-[#1a1814]">{s.n}</span>
+                    <span className="text-xs sm:text-sm uppercase tracking-[0.2em] text-[#9a958e] mt-2 font-medium">{s.l}</span>
                   </div>
                 ))}
               </div>

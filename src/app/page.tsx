@@ -27,6 +27,9 @@ export default function Home() {
 
       <div className="w-full h-16 md:h-32 bg-[#fdfcfa]"></div>
       <ContactCTA />
+      
+      {/* Gap matching other sections */}
+      <div className="w-full h-16 md:h-32 bg-[#fdfcfa]"></div>
 
       <Footer />
     </main>

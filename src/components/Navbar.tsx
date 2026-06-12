@@ -66,10 +66,7 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <button
-            className={`hidden md:inline-flex items-center gap-3 text-sm font-semibold tracking-widest uppercase px-12 py-6 rounded-full border-[1.5px] transition-all duration-300 ${scrolled
-                ? "border-[#1a1814] text-[#1a1814] hover:bg-[#1a1814] hover:text-white"
-                : "border-white/50 text-white hover:bg-white hover:text-[#1a1814]"
-              }`}
+            className="hidden md:inline-flex items-center justify-center text-lg lg:text-xl font-bold px-14 py-5 lg:px-16 lg:py-6 rounded-none bg-black text-white hover:bg-white hover:text-black border border-transparent hover:border-black transition-all duration-300"
           >
             Book Now
           </button>

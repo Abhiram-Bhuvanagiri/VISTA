@@ -111,7 +111,7 @@ export default function Places() {
     <section
       id="places"
       ref={sectionRef}
-      className="w-full bg-[#fdfcfa] pb-32 pt-12 md:pb-48 md:pt-12 px-4 sm:px-8 md:px-24"
+      className="w-full bg-[#fdfcfa] py-[5px] px-4 sm:px-8 md:px-24"
     >
       <div className="max-w-7xl 2xl:max-w-screen-2xl mx-auto">
         {/* Header */}
@@ -130,8 +130,8 @@ export default function Places() {
           </button>
         </div>
 
-        {/* Cards grid — 3 col on desktop */}
-        <div className="dest-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+        {/* Cards grid — 2 col on desktop */}
+        <div className="dest-grid grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16 lg:gap-x-12 lg:gap-y-20">
           {destinations.map((d) => (
             <Link href={`/destinations/${d.id}`} key={d.id} className="dest-card block">
               <DestCard dest={d} />

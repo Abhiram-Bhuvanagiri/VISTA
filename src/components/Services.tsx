@@ -65,7 +65,7 @@ export default function Services() {
   }, []);
 
   return (
-    <section ref={ref} id="services" className="w-full bg-[#fdfcfa] py-32 md:py-48 px-4 sm:px-8 md:px-24">
+    <section ref={ref} id="services" className="w-full bg-[#fdfcfa] py-[5px] px-4 sm:px-8 md:px-24">
       <div className="max-w-7xl 2xl:max-w-screen-2xl mx-auto">
         <div className="mb-20 md:mb-36 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>

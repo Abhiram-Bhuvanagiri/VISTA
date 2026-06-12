@@ -47,7 +47,7 @@ export default function ContactCTA() {
     <section
       ref={ref}
       id="contact"
-      className="w-full bg-[#f0f9ff] py-32 md:py-44 px-4 sm:px-8 md:px-24 overflow-hidden relative min-h-screen flex items-center"
+      className="w-full bg-[#f0f9ff] py-[5px] px-4 sm:px-8 md:px-24 overflow-hidden relative min-h-[120vh] flex items-center"
     >
       {/* Background Image - Made darker/more visible by increasing opacity */}
       <div 
@@ -111,123 +111,46 @@ export default function ContactCTA() {
           </div>
 
           {/* Right — Contact form card */}
-          <div className="cta-form lg:col-span-3 w-full">
-            {/* Elevated separate card */}
-            <div className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] border border-[#e2e8f0] shadow-2xl shadow-[#1e293b]/10 overflow-hidden">
-
-              {/* Card header bar */}
-              <div className="px-6 sm:px-12 pt-8 sm:pt-12 pb-8 border-b border-[#e2e8f0]">
-                <p className="text-[10px] font-light uppercase tracking-[0.3em] text-[#94a3b8] mb-4 flex items-center gap-3">
-                  <span className="w-8 h-px bg-[#94a3b8]" />
-                  Enquiry Form
-                </p>
-                <h3 className="text-2xl font-light text-[#0f172a]">
-                  Contact <span className="font-light italic text-[#1e3a8a]">Our Team</span>
-                </h3>
-                <p className="text-sm font-light text-[#64748b] mt-3">
-                  We typically respond within 2–4 business hours.
-                </p>
-              </div>
-
-              {/* Form body */}
-              <div className="px-6 sm:px-14 py-10 sm:py-14">
-                {submitted ? (
-                  <div className="flex flex-col items-center justify-center text-center py-20 gap-8">
-                    <div className="w-20 h-20 rounded-full bg-[#f0f9ff] border border-[#bae6fd] flex items-center justify-center">
-                      <span className="text-3xl text-[#2563eb]">✦</span>
-                    </div>
-                    <h3 className="text-2xl font-light text-[#0f172a]">
-                      Enquiry <span className="font-light italic">Received</span>
-                    </h3>
-                    <p className="text-[#64748b] font-light leading-relaxed max-w-sm text-base">
-                      Your dedicated travel architect will reach out within 24 hours to begin crafting your journey.
-                    </p>
-                    <button
-                      onClick={() => { setSubmitted(false); setFormState({ name: "", email: "", destination: "", message: "" }); }}
-                      className="mt-4 text-sm font-light uppercase tracking-widest text-[#94a3b8] underline underline-offset-4 hover:text-[#2563eb] transition-colors duration-300"
-                    >
-                      Submit another enquiry
-                    </button>
+          <div className="cta-form lg:col-span-3 w-full px-4 sm:px-0">
+            <div className="bg-transparent rounded-[24px] p-[30px] sm:p-[40px] md:p-[50px] w-full max-w-[700px] mx-auto lg:ml-auto lg:mr-0">
+              <h3 className="text-[34px] md:text-[48px] font-medium text-[#1f2937] leading-[1.15] mb-[36px]">We’d love to hear from you!<br/>Let's get in touch</h3>
+              <form className="flex flex-col" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] mb-[24px]">
+                  <div className="flex flex-col">
+                    <label className="text-[16px] text-[#374151] font-medium mb-[10px]">Full Name</label>
+                    <input type="text" className="w-full h-[52px] bg-white/80 backdrop-blur-sm border border-[#d7d7d7] rounded-[10px] px-[16px] text-[16px] outline-none focus:border-[#5b4a8b]" />
                   </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+                  <div className="flex flex-col">
+                    <label className="text-[16px] text-[#374151] font-medium mb-[10px]">Company</label>
+                    <input type="text" className="w-full h-[52px] bg-white/80 backdrop-blur-sm border border-[#d7d7d7] rounded-[10px] px-[16px] text-[16px] outline-none focus:border-[#5b4a8b]" />
+                  </div>
+                </div>
 
-                    {/* Name + Email row */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                      <div className="flex flex-col gap-3">
-                        <label className="text-[11px] font-light uppercase tracking-widest text-[#64748b]">Full Name</label>
-                        <input
-                          required type="text"
-                          placeholder="Alexandra Rossi"
-                          value={formState.name}
-                          onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                          className={inputClass}
-                        />
-                      </div>
-                      <div className="flex flex-col gap-3">
-                        <label className="text-[11px] font-light uppercase tracking-widest text-[#64748b]">Email Address</label>
-                        <input
-                          required type="email"
-                          placeholder="hello@example.com"
-                          value={formState.email}
-                          onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                          className={inputClass}
-                        />
-                      </div>
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] mb-[24px]">
+                  <div className="flex flex-col">
+                    <label className="text-[16px] text-[#374151] font-medium mb-[10px]">Email</label>
+                    <input type="email" placeholder="olivia@untitledui.com" className="w-full h-[52px] bg-white/80 backdrop-blur-sm border border-[#d7d7d7] rounded-[10px] px-[16px] text-[16px] outline-none focus:border-[#5b4a8b]" />
+                  </div>
+                  <div className="flex flex-col">
+                    <label className="text-[16px] text-[#374151] font-medium mb-[10px]">Phone Number</label>
+                    <input type="tel" placeholder="+1 (555) 000-0000" className="w-full h-[52px] bg-white/80 backdrop-blur-sm border border-[#d7d7d7] rounded-[10px] px-[16px] text-[16px] outline-none focus:border-[#5b4a8b]" />
+                  </div>
+                </div>
 
-                    {/* Destination */}
-                    <div className="flex flex-col gap-3">
-                      <label className="text-[11px] font-light uppercase tracking-widest text-[#64748b]">Destination Interest</label>
-                      <div className="relative">
-                        <select
-                          required
-                          value={formState.destination}
-                          onChange={(e) => setFormState({ ...formState, destination: e.target.value })}
-                          className={inputClass + " appearance-none cursor-pointer pr-12"}
-                        >
-                          <option value="" disabled>Select a destination…</option>
-                          {destinationOptions.map((d) => (
-                            <option key={d} value={d}>{d}</option>
-                          ))}
-                        </select>
-                        {/* Custom chevron */}
-                        <div className="pointer-events-none absolute inset-y-0 right-6 flex items-center">
-                          <svg className="w-5 h-5 text-[#94a3b8]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
+                <div className="flex flex-col mb-[24px]">
+                  <label className="text-[16px] text-[#374151] font-medium mb-[10px]">Address</label>
+                  <input type="text" className="w-full h-[52px] bg-white/80 backdrop-blur-sm border border-[#d7d7d7] rounded-[10px] px-[16px] text-[16px] outline-none focus:border-[#5b4a8b]" />
+                </div>
 
-                    {/* Message */}
-                    <div className="flex flex-col gap-3">
-                      <label className="text-[11px] font-light uppercase tracking-widest text-[#64748b]">Your Message</label>
-                      <textarea
-                        required rows={5}
-                        placeholder="Tell us about your dream journey — travel dates, group size, special occasions, budget range…"
-                        value={formState.message}
-                        onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                        className={inputClass + " resize-none"}
-                      />
-                    </div>
+                <div className="flex flex-col">
+                  <label className="text-[16px] text-[#374151] font-medium mb-[10px]">Your Message</label>
+                  <textarea placeholder="Type your message here" className="w-full h-[120px] bg-white/80 backdrop-blur-sm border border-[#d7d7d7] rounded-[10px] p-[16px] text-[16px] resize-none outline-none focus:border-[#5b4a8b]"></textarea>
+                </div>
 
-                    {/* Submit */}
-                    <div className="flex flex-col sm:flex-row items-center gap-6 pt-4">
-                      <button
-                        type="submit"
-                        className="group flex items-center justify-center gap-3 bg-[#2563eb] text-white text-sm font-medium tracking-widest uppercase w-full sm:w-auto px-8 sm:px-10 py-4 rounded-full hover:bg-[#1d4ed8] transition-colors duration-300 shadow-lg shadow-blue-500/30"
-                      >
-                        Send Enquiry
-                        <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300" />
-                      </button>
-                      <p className="text-[11px] text-[#94a3b8] font-light leading-relaxed text-center sm:text-left">
-                        We respect your privacy.<br className="hidden sm:block" /> No spam, ever. Unsubscribe any time.
-                      </p>
-                    </div>
-                  </form>
-                )}
-              </div>
+                <button type="submit" className="mt-[40px] md:mt-[60px] self-start px-[36px] py-[16px] border-none rounded-none bg-[#5b4a8b] text-white text-[16px] font-medium cursor-pointer hover:bg-[#4a3c72] transition-colors duration-300">
+                  Send Message
+                </button>
+              </form>
             </div>
           </div>
         </div>

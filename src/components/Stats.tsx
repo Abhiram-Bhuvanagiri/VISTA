@@ -39,7 +39,7 @@ export default function Stats() {
   }, []);
 
   return (
-    <section ref={ref} className="w-full bg-[#1a1814] py-24 md:py-32 px-4 sm:px-8 md:px-24">
+    <section ref={ref} className="w-full bg-[#1a1814] py-[5px] px-4 sm:px-8 md:px-24">
       <div className="max-w-7xl 2xl:max-w-screen-2xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x divide-white/10">
         {stats.map((s, i) => (
           <div key={i} className="stat-item flex flex-col items-center justify-center py-8 md:py-0 gap-3 group cursor-default">
