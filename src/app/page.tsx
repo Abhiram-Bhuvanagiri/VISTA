@@ -14,9 +14,6 @@ export default function Home() {
         <Navbar />
       </div>
 
-      {/* White space gap between navbar and hero */}
-      <div className="w-full h-20 md:h-28 bg-[#fdfcfa]" />
-
       {/* Hero section container */}
       <div className="w-full">
         <HeroSequence />
