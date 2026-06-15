@@ -34,9 +34,9 @@ export default function Navbar() {
       <nav
         ref={navRef}
         style={{ marginBottom: "20px", padding: "0px" }}
-        className={`fixed top-0 left-0 w-full z-[100] transition-[padding,background-color,backdrop-filter,box-shadow] duration-500 transform-gpu ${scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-sm py-6"
-            : "bg-transparent py-12"
+        className={`fixed top-0 left-0 w-full z-[100] transition-[padding,background-color,backdrop-filter,border-color] duration-500 transform-gpu border-b ${scrolled
+            ? "bg-white/95 backdrop-blur-md border-[#e5e7eb] py-6"
+            : "bg-transparent border-transparent py-12"
           }`}
       >
         <div className="max-w-7xl 2xl:max-w-screen-2xl mx-auto px-6 md:px-12 flex items-center justify-between">
