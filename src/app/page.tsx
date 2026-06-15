@@ -15,7 +15,7 @@ export default function Home() {
       </div>
 
       {/* Hero section container */}
-      <div className="w-full">
+      <div className="w-full mt-24 md:mt-32">
         <HeroSequence />
       </div>
 

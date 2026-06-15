@@ -43,23 +43,19 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className={`text-5xl font-bold tracking-[0.25em] uppercase transition-colors duration-500 ${scrolled ? "text-[#1a1814]" : "text-white"
-              }`}
-            style={{ paddingLeft: "20px" }}
+            className="text-5xl font-bold tracking-[0.25em] uppercase transition-colors duration-500 text-[#1a1814]"
+            style={{ paddingLeft: "20px", paddingBottom: "5px", paddingTop: "5px" }}
           >
             Vista
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-14">
+          <div className="hidden md:flex items-center gap-14" style={{ paddingBottom: "5px" }}>
             {links.map((l) => (
               <Link
                 key={l.label}
                 href={l.href}
-                className={`text-sm font-medium tracking-[0.2em] uppercase transition-colors duration-300 ${scrolled
-                    ? "text-[#6a6560] hover:text-[#1a1814]"
-                    : "text-white/70 hover:text-white"
-                  }`}
+                className="text-sm font-medium tracking-[0.2em] uppercase transition-colors duration-300 text-[#6a6560] hover:text-[#1a1814]"
               >
                 {l.label}
               </Link>
@@ -70,7 +66,7 @@ export default function Navbar() {
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="hidden md:inline-flex items-center justify-center text-lg lg:text-xl font-bold bg-black text-white hover:bg-white hover:text-black active:bg-gray-400 border border-transparent hover:border-black active:border-transparent transition-all duration-300"
-            style={{ borderRadius: "50px", padding: "5px 10px" }}
+            style={{ borderRadius: "50px", padding: "5px 10px", marginBottom: "5px", marginTop: "5px" }}
           >
             Book Now
           </button>
@@ -80,19 +76,19 @@ export default function Navbar() {
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden flex flex-col gap-[7px] z-50"
             aria-label="Toggle menu"
-            style={{ borderRadius: "50px", padding: "10px 12px" }}
+            style={{ borderRadius: "50px", padding: "10px 12px", marginBottom: "5px" }}
           >
             <span
-              className={`w-8 h-[2px] block transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[9px]" : ""
-                } ${scrolled || menuOpen ? "bg-[#1a1814]" : "bg-white"}`}
+              className={`w-8 h-[2px] block transition-all duration-300 bg-[#1a1814] ${menuOpen ? "rotate-45 translate-y-[9px]" : ""
+                }`}
             />
             <span
-              className={`w-8 h-[2px] block transition-all duration-300 ${menuOpen ? "opacity-0" : ""
-                } ${scrolled ? "bg-[#1a1814]" : "bg-white"}`}
+              className={`w-8 h-[2px] block transition-all duration-300 bg-[#1a1814] ${menuOpen ? "opacity-0" : ""
+                }`}
             />
             <span
-              className={`w-8 h-[2px] block transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[9px]" : ""
-                } ${scrolled || menuOpen ? "bg-[#1a1814]" : "bg-white"}`}
+              className={`w-8 h-[2px] block transition-all duration-300 bg-[#1a1814] ${menuOpen ? "-rotate-45 -translate-y-[9px]" : ""
+                }`}
             />
           </button>
         </div>

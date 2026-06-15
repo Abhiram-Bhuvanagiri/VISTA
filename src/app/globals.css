@@ -62,3 +62,22 @@ html.lenis body {
 .section-spacing {
   padding-block: clamp(5rem, 10vw, 10rem);
 }
+
+/* ── Modern Custom Scrollbar ───────────────────────── */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fdfcfa;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c0bab1;
+  border-radius: 10px;
+  border: 2px solid #fdfcfa;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #9a958e;
+}
