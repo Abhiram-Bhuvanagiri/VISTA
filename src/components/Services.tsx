@@ -69,16 +69,20 @@ export default function Services() {
       <div className="max-w-7xl 2xl:max-w-screen-2xl mx-auto">
         <div className="mb-20 md:mb-36 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-[#9a958e] mb-6 flex items-center gap-3">
+            <p className="text-xs uppercase tracking-[0.3em] text-[#9a958e] mb-6 flex items-center gap-3" style={{ paddingLeft: "20px" }}>
               <span className="w-8 h-px bg-[#9a958e]" />
               What We Offer
             </p>
-            <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-light leading-none text-[#1a1814]">
+            <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-light leading-[0.82] tracking-[-0.06em] text-[#1a1814]" style={{ paddingLeft: "20px" }}>
               Crafted for the<br />
               <span className="font-semibold italic">Discerning Traveler</span>
             </h2>
           </div>
-          <button className="flex-shrink-0 flex items-center gap-2 text-xs font-semibold tracking-widest uppercase pb-1 border-b border-[#1a1814] hover:text-[#6a6560] hover:border-[#6a6560] transition-colors duration-300">
+          <button 
+            onClick={() => alert("Navigating to All Services...")}
+            className="flex-shrink-0 flex items-center gap-2 text-xs font-semibold tracking-widest uppercase border border-[#1a1814] hover:bg-[#1a1814] hover:text-white transition-all duration-300" 
+            style={{ borderRadius: "50px", padding: "5px 10px" }}
+          >
             View All Services <ArrowUpRight className="w-3.5 h-3.5" />
           </button>
         </div>
@@ -109,7 +113,7 @@ export default function Services() {
 
               {/* Content - Centered */}
               <div className="absolute inset-0 p-6 md:p-10 z-20 flex flex-col items-center justify-center text-center">
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                <h3 className="text-2xl md:text-3xl font-medium leading-[0.82] tracking-[-0.06em] text-white mb-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
                   {s.title}
                 </h3>
                 

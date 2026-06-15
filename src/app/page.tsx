@@ -9,9 +9,18 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main className="bg-[#fdfcfa] text-[#1a1814]">
-      <Navbar />
-      {/* Hero video sequence — pins itself while frames play */}
-      <HeroSequence />
+      {/* Navbar container */}
+      <div className="w-full">
+        <Navbar />
+      </div>
+
+      {/* White space gap between navbar and hero */}
+      <div className="w-full h-20 md:h-28 bg-[#fdfcfa]" />
+
+      {/* Hero section container */}
+      <div className="w-full">
+        <HeroSequence />
+      </div>
 
       {/* Moderate empty white space division as requested */}
       <div className="w-full h-16 md:h-32 bg-[#fdfcfa]"></div>

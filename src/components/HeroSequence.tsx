@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 const FRAME_COUNT = 252;
 const SCROLL_VH = 1000;
 // How many frames to pre-load before showing canvas
-const READY_THRESHOLD = 20;
+const READY_THRESHOLD = 8;
 // Batch size for staggered background loading
 const LOAD_BATCH_SIZE = 20;    // ← was 10; larger batches = fewer setTimeout round-trips
 const LOAD_BATCH_DELAY_MS = 30; // ← was 50; tighter gap keeps loading ahead of scroll
@@ -181,9 +181,9 @@ export default function HeroSequence() {
       img.src = getFrameSrc(index + 1);
     };
 
-    // CHANGE: raise priority window from 40 → 80 frames so fast scrollers
-    // stay ahead of the decode queue and never hit a null bitmap.
-    const PRIORITY_FRAMES = 80;
+    // Reduced priority window to prevent network congestion on first load
+    // The background batch loader will easily keep up with the rest.
+    const PRIORITY_FRAMES = 12;
     for (let i = 0; i < PRIORITY_FRAMES; i++) loadFrame(i);
 
     let batchStart = PRIORITY_FRAMES;
@@ -264,18 +264,18 @@ export default function HeroSequence() {
       style={{ height: `${SCROLL_VH}vh` }}
       className="relative"
     >
-      <div className="sticky top-0 h-screen overflow-hidden bg-black">
+      <div className="sticky top-0 h-screen overflow-hidden bg-black" style={{ padding: "16px 32px 32px" }}>
         <canvas
           ref={canvasRef}
           className="absolute inset-0 w-full h-full"
         />
 
         {/* Bottom Gradient */}
-        <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-black/70 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-black/70 to-transparent z-10 pointer-events-none" style={{ padding: "0px 0px 30px 20px" }} />
 
         {/* Loading */}
         {!ready && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black z-30">
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black z-30" style={{ padding: "0px 0px 30px 20px" }}>
             <p className="text-white/40 tracking-[0.4em] uppercase text-[11px] mb-8">
               Loading Vista
             </p>
@@ -291,14 +291,14 @@ export default function HeroSequence() {
 
         {/* Hero Text */}
         {ready && (
-          <div className="absolute inset-x-0 bottom-0 pb-12 md:pb-20 z-20 pointer-events-none">
-            <div className="max-w-7xl 2xl:max-w-screen-2xl mx-auto px-6 md:px-12">
+          <div className="absolute inset-x-0 bottom-0 z-20 pointer-events-none" style={{ padding: "0px 0px 30px 20px" }}>
+            <div className="w-full max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-16 2xl:px-24 pt-32 sm:pt-36 md:pt-40 pb-32 sm:pb-40 lg:pb-16 flex flex-col justify-center">
               <p className="text-white/40 uppercase tracking-[0.35em] text-[10px] mb-5">
                 ✦ Scroll to explore
               </p>
               <h1
                 ref={placeRef}
-                className="text-white font-light leading-[1.05]"
+                className="text-white font-light leading-[0.82] tracking-[-0.06em] mt-8"
                 style={{ fontSize: "clamp(2.5rem, 6vw, 9rem)" }}
                 dangerouslySetInnerHTML={{ __html: getHTMLForPlace(currentPlaceRef.current) }}
               />

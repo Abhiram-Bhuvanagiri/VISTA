@@ -159,17 +159,17 @@ export default function Testimonials() {
       {/* Centered Content */}
       <div className="testi-content relative z-10 flex flex-col items-center text-center px-4 max-w-4xl mx-auto bg-[#f3f0eb]/90 backdrop-blur-md py-12 mt-16 md:mt-24 rounded-3xl pointer-events-none">
         <div className="inline-block mb-8 px-5 py-2 rounded-full border border-[#e8e4de] bg-white pointer-events-auto">
-          <p className="text-xs md:text-sm uppercase tracking-[0.2em] text-[#9a958e] font-semibold">
+          <p className="text-xs md:text-sm uppercase tracking-[0.2em] text-[#9a958e] font-semibold" style={{ paddingLeft: "20px" }}>
             Loved by Travelers
           </p>
         </div>
         
-        <h2 className="text-[clamp(2.5rem,5vw,4.5rem)] md:text-[clamp(3.5rem,6vw,6rem)] font-light leading-tight text-[#1a1814] mb-8 pointer-events-auto">
+        <h2 className="text-[clamp(2.5rem,5vw,4.5rem)] md:text-[clamp(3.5rem,6vw,6rem)] font-light leading-[0.82] tracking-[-0.06em] text-[#1a1814] mb-8 pointer-events-auto" style={{ paddingLeft: "20px" }}>
           Unforgettable<br />
           <span className="font-semibold italic font-serif">Experiences</span>
         </h2>
         
-        <p className="text-lg md:text-2xl text-[#3a3630] font-light max-w-3xl mx-auto pointer-events-auto">
+        <p className="text-lg md:text-2xl text-[#3a3630] font-light max-w-3xl mx-auto pointer-events-auto" style={{ paddingLeft: "20px" }}>
           Join thousands of travelers who have trusted Vista to curate their dream journeys across the globe.
         </p>
       </div>

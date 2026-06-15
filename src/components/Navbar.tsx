@@ -33,6 +33,7 @@ export default function Navbar() {
     <>
       <nav
         ref={navRef}
+        style={{ marginBottom: "20px", padding: "0px" }}
         className={`fixed top-0 left-0 w-full z-[100] transition-[padding,background-color,backdrop-filter,box-shadow] duration-500 transform-gpu ${scrolled
             ? "bg-white/95 backdrop-blur-md shadow-sm py-6"
             : "bg-transparent py-12"
@@ -44,6 +45,7 @@ export default function Navbar() {
             href="/"
             className={`text-5xl font-bold tracking-[0.25em] uppercase transition-colors duration-500 ${scrolled ? "text-[#1a1814]" : "text-white"
               }`}
+            style={{ paddingLeft: "20px" }}
           >
             Vista
           </Link>
@@ -66,7 +68,9 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <button
-            className="hidden md:inline-flex items-center justify-center text-lg lg:text-xl font-bold px-14 py-5 lg:px-16 lg:py-6 rounded-none bg-black text-white hover:bg-white hover:text-black border border-transparent hover:border-black transition-all duration-300"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="hidden md:inline-flex items-center justify-center text-lg lg:text-xl font-bold bg-black text-white hover:bg-white hover:text-black active:bg-gray-400 border border-transparent hover:border-black active:border-transparent transition-all duration-300"
+            style={{ borderRadius: "50px", padding: "5px 10px" }}
           >
             Book Now
           </button>
@@ -74,8 +78,9 @@ export default function Navbar() {
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden flex flex-col gap-[7px] z-50 p-3"
+            className="md:hidden flex flex-col gap-[7px] z-50"
             aria-label="Toggle menu"
+            style={{ borderRadius: "50px", padding: "10px 12px" }}
           >
             <span
               className={`w-8 h-[2px] block transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[9px]" : ""

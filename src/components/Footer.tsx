@@ -6,12 +6,12 @@ export default function Footer() {
   return (
     <footer className="relative w-full bg-[#0e0c0a] text-white overflow-hidden">
       {/* ─── Footer Content ─── */}
-      <div className="relative z-10 max-w-7xl 2xl:max-w-screen-2xl mx-auto px-4 sm:px-8 md:px-24 py-16 md:py-24">
+      <div style={{ maxWidth: "2560px", margin: "0 auto", padding: "60px 40px" }} className="relative z-10">
         
         {/* Top Section */}
         <div className="flex flex-col md:flex-row justify-between items-start gap-8 pb-16 border-b border-white/10">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-2">VISTA</h2>
+            <h2 className="text-4xl md:text-5xl font-bold leading-[0.82] tracking-[-0.06em] mb-2">VISTA</h2>
             <p className="text-sm text-white/60 font-medium">Luxury Travel & Bespoke Experiences</p>
           </div>
           <div className="flex flex-col md:text-right gap-1">

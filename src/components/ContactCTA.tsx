@@ -66,28 +66,28 @@ export default function ContactCTA() {
             
             <div>
               {/* ── Section tag ── */}
-              <p className="cta-tag text-[10px] font-light uppercase tracking-[0.3em] text-[#94a3b8] mb-8 flex items-center gap-3">
+              <p className="cta-tag text-[10px] font-light uppercase tracking-[0.3em] text-[#94a3b8] mb-8 flex items-center gap-3" style={{ paddingLeft: "20px" }}>
                 <span className="w-8 h-px bg-[#94a3b8]" />
                 Start Your Journey
               </p>
 
               {/* ── Headline ── */}
-              <h2 className="text-[clamp(3rem,5vw,6rem)] font-light leading-[1.05] text-[#0f172a]">
+              <h2 className="text-[clamp(3rem,5vw,6rem)] font-light leading-[0.82] tracking-[-0.06em] text-[#0f172a]" style={{ paddingLeft: "20px" }}>
                 Let&apos;s Plan Your <br />
                 <span className="font-light italic text-[#1e3a8a]">Dream Escape</span>
               </h2>
             </div>
 
             {/* Popular destinations */}
-            <div>
-              <p className="text-[10px] font-light uppercase tracking-[0.3em] text-[#94a3b8] mb-5">Popular Destinations</p>
-              <div className="flex flex-wrap gap-2">
+            <div style={{ paddingLeft: "20px" }}>
+              <p className="text-xs font-light uppercase tracking-[0.3em] text-[#94a3b8] mb-5">Popular Destinations</p>
+              <div className="flex flex-wrap gap-2" style={{ marginTop: "20px" }}>
                 {["Swiss Alps", "Santorini", "Kyoto", "Bali", "Maldives", "Amalfi Coast", "Patagonia", "+70 more"].map((tag) => (
                   <span
                     key={tag}
-                    className="inline-flex items-center gap-1.5 text-[10px] font-light uppercase tracking-widest text-[#64748b] bg-white/60 border border-[#cbd5e1]/60 rounded-full px-4 py-2 hover:border-[#2563eb] hover:text-[#2563eb] transition-colors duration-300 cursor-default"
+                    className="inline-flex items-center gap-1.5 text-xs font-light uppercase tracking-widest text-[#64748b] bg-white/60 border border-[#cbd5e1]/60 rounded-full px-4 py-2 hover:border-[#2563eb] hover:text-[#2563eb] transition-colors duration-300 cursor-default"
                   >
-                    <MapPin className="w-2.5 h-2.5 text-[#2563eb] flex-shrink-0" />
+                    <MapPin className="w-3 h-3 text-[#2563eb] flex-shrink-0" />
                     {tag}
                   </span>
                 ))}
@@ -95,16 +95,16 @@ export default function ContactCTA() {
             </div>
 
             {/* Contact details */}
-            <div className="flex flex-col gap-5">
-              <p className="text-[10px] font-light uppercase tracking-[0.3em] text-[#94a3b8] mb-1">Get In Touch Directly</p>
+            <div className="flex flex-col gap-5" style={{ paddingLeft: "20px" }}>
+              <p className="text-xs font-light uppercase tracking-[0.3em] text-[#94a3b8] mb-1">Get In Touch Directly</p>
               {[
                 { label: "Email", value: "hello@vistatravel.com" },
                 { label: "Phone", value: "+1 (800) 847 8228" },
                 { label: "Hours", value: "Mon – Fri, 9am – 7pm GMT" },
               ].map((c) => (
                 <div key={c.label} className="flex items-center gap-5">
-                  <span className="text-[10px] font-light uppercase tracking-widest text-[#94a3b8] w-12">{c.label}</span>
-                  <span className="text-base text-[#475569] font-light">{c.value}</span>
+                  <span className="text-xs font-light uppercase tracking-widest text-[#94a3b8] w-16">{c.label}</span>
+                  <span className="text-lg text-[#475569] font-light">{c.value}</span>
                 </div>
               ))}
             </div>
@@ -113,44 +113,64 @@ export default function ContactCTA() {
           {/* Right — Contact form card */}
           <div className="cta-form lg:col-span-3 w-full px-4 sm:px-0">
             <div className="bg-transparent rounded-[24px] p-[30px] sm:p-[40px] md:p-[50px] w-full max-w-[700px] mx-auto lg:ml-auto lg:mr-0">
-              <h3 className="text-[34px] md:text-[48px] font-medium text-[#1f2937] leading-[1.15] mb-[36px]">We’d love to hear from you!<br/>Let's get in touch</h3>
-              <form className="flex flex-col" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] mb-[24px]">
-                  <div className="flex flex-col">
-                    <label className="text-[16px] text-[#374151] font-medium mb-[10px]">Full Name</label>
+              <h3 
+                className="text-[34px] md:text-[48px] font-medium text-[#1f2937] leading-[0.82] tracking-[-0.06em] mb-[36px]"
+                style={{ paddingLeft: "20px", marginBottom: "30px" }}
+              >
+                We’d love to hear from you!<br/>Let's get in touch
+              </h3>
+              {submitted ? (
+                <div className="flex flex-col items-center justify-center py-10 text-center animate-in fade-in zoom-in duration-500">
+                  <div className="w-16 h-16 bg-[#5b4a8b] rounded-full flex items-center justify-center mb-6 shadow-lg shadow-[#5b4a8b]/30">
+                    <Send className="w-8 h-8 text-white -ml-1" />
+                  </div>
+                  <h4 className="text-[28px] md:text-[34px] font-medium text-[#1f2937] mb-3 leading-tight tracking-[-0.04em]">Message Sent!</h4>
+                  <p className="text-[#64748b] text-[16px] max-w-sm mx-auto">Thank you for reaching out. We'll get back to you shortly to start planning your dream escape.</p>
+                  <button onClick={() => setSubmitted(false)} className="mt-8 text-sm font-medium text-[#5b4a8b] hover:underline underline-offset-4">Send another message</button>
+                </div>
+              ) : (
+                <form 
+                  className="flex flex-col" 
+                  onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+                  style={{ paddingLeft: "20px", marginBottom: "30px" }}
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] mb-[24px]">
+                    <div className="flex flex-col">
+                      <label className="text-[16px] text-[#374151] font-medium mb-[10px]">Full Name</label>
+                      <input type="text" className="w-full h-[52px] bg-white/80 backdrop-blur-sm border border-[#d7d7d7] rounded-[10px] px-[16px] text-[16px] outline-none focus:border-[#5b4a8b]" />
+                    </div>
+                    <div className="flex flex-col">
+                      <label className="text-[16px] text-[#374151] font-medium mb-[10px]">Company</label>
+                      <input type="text" className="w-full h-[52px] bg-white/80 backdrop-blur-sm border border-[#d7d7d7] rounded-[10px] px-[16px] text-[16px] outline-none focus:border-[#5b4a8b]" />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] mb-[24px]">
+                    <div className="flex flex-col">
+                      <label className="text-[16px] text-[#374151] font-medium mb-[10px]">Email</label>
+                      <input type="email" required className="w-full h-[52px] bg-white/80 backdrop-blur-sm border border-[#d7d7d7] rounded-[10px] px-[16px] text-[16px] outline-none focus:border-[#5b4a8b]" />
+                    </div>
+                    <div className="flex flex-col">
+                      <label className="text-[16px] text-[#374151] font-medium mb-[10px]">Phone Number</label>
+                      <input type="tel" className="w-full h-[52px] bg-white/80 backdrop-blur-sm border border-[#d7d7d7] rounded-[10px] px-[16px] text-[16px] outline-none focus:border-[#5b4a8b]" />
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col mb-[24px]">
+                    <label className="text-[16px] text-[#374151] font-medium mb-[10px]">Address</label>
                     <input type="text" className="w-full h-[52px] bg-white/80 backdrop-blur-sm border border-[#d7d7d7] rounded-[10px] px-[16px] text-[16px] outline-none focus:border-[#5b4a8b]" />
                   </div>
+
                   <div className="flex flex-col">
-                    <label className="text-[16px] text-[#374151] font-medium mb-[10px]">Company</label>
-                    <input type="text" className="w-full h-[52px] bg-white/80 backdrop-blur-sm border border-[#d7d7d7] rounded-[10px] px-[16px] text-[16px] outline-none focus:border-[#5b4a8b]" />
+                    <label className="text-[16px] text-[#374151] font-medium mb-[10px]">Your Message</label>
+                    <textarea required className="w-full h-[120px] bg-white/80 backdrop-blur-sm border border-[#d7d7d7] rounded-[10px] p-[16px] text-[16px] resize-none outline-none focus:border-[#5b4a8b]"></textarea>
                   </div>
-                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] mb-[24px]">
-                  <div className="flex flex-col">
-                    <label className="text-[16px] text-[#374151] font-medium mb-[10px]">Email</label>
-                    <input type="email" placeholder="olivia@untitledui.com" className="w-full h-[52px] bg-white/80 backdrop-blur-sm border border-[#d7d7d7] rounded-[10px] px-[16px] text-[16px] outline-none focus:border-[#5b4a8b]" />
-                  </div>
-                  <div className="flex flex-col">
-                    <label className="text-[16px] text-[#374151] font-medium mb-[10px]">Phone Number</label>
-                    <input type="tel" placeholder="+1 (555) 000-0000" className="w-full h-[52px] bg-white/80 backdrop-blur-sm border border-[#d7d7d7] rounded-[10px] px-[16px] text-[16px] outline-none focus:border-[#5b4a8b]" />
-                  </div>
-                </div>
-
-                <div className="flex flex-col mb-[24px]">
-                  <label className="text-[16px] text-[#374151] font-medium mb-[10px]">Address</label>
-                  <input type="text" className="w-full h-[52px] bg-white/80 backdrop-blur-sm border border-[#d7d7d7] rounded-[10px] px-[16px] text-[16px] outline-none focus:border-[#5b4a8b]" />
-                </div>
-
-                <div className="flex flex-col">
-                  <label className="text-[16px] text-[#374151] font-medium mb-[10px]">Your Message</label>
-                  <textarea placeholder="Type your message here" className="w-full h-[120px] bg-white/80 backdrop-blur-sm border border-[#d7d7d7] rounded-[10px] p-[16px] text-[16px] resize-none outline-none focus:border-[#5b4a8b]"></textarea>
-                </div>
-
-                <button type="submit" className="mt-[40px] md:mt-[60px] self-start px-[36px] py-[16px] border-none rounded-none bg-[#5b4a8b] text-white text-[16px] font-medium cursor-pointer hover:bg-[#4a3c72] transition-colors duration-300">
-                  Send Message
-                </button>
-              </form>
+                  <button type="submit" className="self-start bg-[#5b4a8b] text-white text-[16px] font-medium cursor-pointer hover:bg-[#4a3c72] transition-all duration-300" style={{ borderRadius: "50px", padding: "10px 24px", marginTop: "40px" }}>
+                    Send Message
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </div>

@@ -108,7 +108,7 @@ export default function AboutUs() {
       ref={sectionRef}
       className="w-full bg-[#fdfcfa] py-[5px] px-4 sm:px-8 md:px-24"
     >
-      <div className="max-w-7xl 2xl:max-w-screen-2xl mx-auto">
+      <div style={{ maxWidth: "2560px", margin: "0 auto", padding: "20px 40px" }}>
         {/* Top label */}
         <p className="about-tag text-xs uppercase tracking-[0.3em] text-[#9a958e] mb-20 flex items-center gap-3">
           <span className="w-8 h-px bg-[#9a958e]" />
@@ -119,7 +119,7 @@ export default function AboutUs() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-start">
           {/* Left – Text */}
           <div className="flex flex-col gap-10">
-            <h2 className="about-heading text-[clamp(2.2rem,4.5vw,5rem)] font-light leading-[1.1] text-[#1a1814]">
+            <h2 className="about-heading text-[clamp(2.2rem,4.5vw,5rem)] font-light leading-[0.82] tracking-[-0.06em] text-[#1a1814]">
               Crafting Journeys of
               <span className="block font-semibold italic">Uncompromising</span>
               <span className="block">Distinction</span>
@@ -194,6 +194,7 @@ export default function AboutUs() {
           </div>
         </div>
       </div>
+
     </section>
   );
 }
