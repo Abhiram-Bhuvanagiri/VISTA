@@ -66,7 +66,7 @@ export default function Navbar() {
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="hidden md:inline-flex items-center justify-center text-lg lg:text-xl font-bold bg-black text-white hover:bg-white hover:text-black active:bg-gray-400 border border-transparent hover:border-black active:border-transparent transition-all duration-300"
-            style={{ borderRadius: "50px", padding: "5px 10px", marginBottom: "5px", marginTop: "5px" }}
+            style={{ borderRadius: "50px", padding: "5px 10px", marginBottom: "5px", marginTop: "5px", marginLeft: "5px" }}
           >
             Book Now
           </button>
