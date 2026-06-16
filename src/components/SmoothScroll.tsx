@@ -33,7 +33,7 @@ export default function SmoothScroll({
         lerp: 0.08,
         duration: 1.2,
         smoothWheel: true,
-        syncTouch: false,
+        syncTouch: true,
       }}
     >
       <LenisScrollTriggerSync />

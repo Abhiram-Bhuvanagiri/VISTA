@@ -35,8 +35,8 @@ export default function Navbar() {
         ref={navRef}
         style={{ marginBottom: "20px", padding: "0px" }}
         className={`fixed top-0 left-0 w-full z-[100] transition-[padding,background-color,backdrop-filter,border-color] duration-500 transform-gpu border-b ${scrolled
-            ? "bg-white/95 backdrop-blur-md border-[#e5e7eb] py-6"
-            : "bg-transparent border-transparent py-12"
+          ? "bg-white/95 backdrop-blur-md border-[#e5e7eb] py-6"
+          : "bg-transparent border-transparent py-12"
           }`}
       >
         <div className="max-w-7xl 2xl:max-w-screen-2xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -66,7 +66,7 @@ export default function Navbar() {
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="hidden md:inline-flex items-center justify-center text-lg lg:text-xl font-bold bg-black text-white hover:bg-white hover:text-black active:bg-gray-400 border border-transparent hover:border-black active:border-transparent transition-all duration-300"
-            style={{ borderRadius: "50px", padding: "5px 10px", marginBottom: "5px", marginTop: "5px", marginRight: "20px" }}
+            style={{ borderRadius: "50px", padding: "5px 10px", marginBottom: "5px", marginTop: "5px", marginRight: "10px" }}
           >
             Book Now
           </button>
@@ -97,8 +97,8 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 z-[90] bg-[#fdfcfa] flex flex-col items-center justify-center transition-all duration-500 md:hidden ${menuOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
           }`}
       >
         <div className="flex flex-col items-center gap-10">

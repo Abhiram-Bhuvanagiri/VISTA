@@ -66,22 +66,22 @@ export default function ContactCTA() {
             
             <div>
               {/* ── Section tag ── */}
-              <p className="cta-tag text-[10px] font-light uppercase tracking-[0.3em] text-[#94a3b8] mb-8 flex items-center gap-3" style={{ paddingLeft: "20px" }}>
+              <p className="cta-tag text-[10px] font-light uppercase tracking-[0.3em] text-[#94a3b8] mb-8 flex items-center gap-3 pl-2 md:pl-5">
                 <span className="w-8 h-px bg-[#94a3b8]" />
                 Start Your Journey
               </p>
 
               {/* ── Headline ── */}
-              <h2 className="text-[clamp(3rem,5vw,6rem)] font-light leading-[0.82] tracking-[-0.06em] text-[#0f172a]" style={{ paddingLeft: "20px" }}>
+              <h2 className="text-[clamp(3rem,5vw,6rem)] font-light leading-[0.82] tracking-[-0.06em] text-[#0f172a] pl-2 md:pl-5">
                 Let&apos;s Plan Your <br />
                 <span className="font-light italic text-[#1e3a8a]">Dream Escape</span>
               </h2>
             </div>
 
             {/* Popular destinations */}
-            <div style={{ paddingLeft: "20px" }}>
+            <div className="pl-2 md:pl-5">
               <p className="text-xs font-light uppercase tracking-[0.3em] text-[#94a3b8] mb-5">Popular Destinations</p>
-              <div className="flex flex-wrap gap-2" style={{ marginTop: "20px" }}>
+              <div className="flex flex-wrap gap-2 mt-5">
                 {["Swiss Alps", "Santorini", "Kyoto", "Bali", "Maldives", "Amalfi Coast", "Patagonia", "+70 more"].map((tag) => (
                   <span
                     key={tag}
@@ -95,7 +95,7 @@ export default function ContactCTA() {
             </div>
 
             {/* Contact details */}
-            <div className="flex flex-col gap-5" style={{ paddingLeft: "20px" }}>
+            <div className="flex flex-col gap-5 pl-2 md:pl-5">
               <p className="text-xs font-light uppercase tracking-[0.3em] text-[#94a3b8] mb-1">Get In Touch Directly</p>
               {[
                 { label: "Email", value: "hello@vistatravel.com" },
@@ -111,11 +111,10 @@ export default function ContactCTA() {
           </div>
 
           {/* Right — Contact form card */}
-          <div className="cta-form lg:col-span-3 w-full px-4 sm:px-0">
-            <div className="bg-transparent rounded-[24px] p-[30px] sm:p-[40px] md:p-[50px] w-full max-w-[700px] mx-auto lg:ml-auto lg:mr-0">
+          <div className="cta-form lg:col-span-3 w-full px-0 sm:px-4">
+            <div className="bg-transparent rounded-[24px] p-2 sm:p-[40px] md:p-[50px] w-full max-w-[700px] mx-auto lg:ml-auto lg:mr-0">
               <h3 
-                className="text-[34px] md:text-[48px] font-medium text-[#1f2937] leading-[0.82] tracking-[-0.06em] mb-[36px]"
-                style={{ paddingLeft: "20px", marginBottom: "30px" }}
+                className="text-[34px] md:text-[48px] font-medium text-[#1f2937] leading-[0.82] tracking-[-0.06em] mb-8 md:mb-10 pl-2 md:pl-5"
               >
                 We’d love to hear from you!<br/>Let's get in touch
               </h3>
@@ -130,9 +129,8 @@ export default function ContactCTA() {
                 </div>
               ) : (
                 <form 
-                  className="flex flex-col" 
+                  className="flex flex-col pl-2 md:pl-5 mb-8 md:mb-[30px]" 
                   onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
-                  style={{ paddingLeft: "20px", marginBottom: "30px" }}
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] mb-[24px]">
                     <div className="flex flex-col">

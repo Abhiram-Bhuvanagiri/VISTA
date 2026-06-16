@@ -85,9 +85,18 @@ export default function HeroSequence() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     // ── Canvas sizing ─────────────────────────────────────────────────────
+    let lastW = 0;
+    let lastH = 0;
     const resizeCanvas = () => {
       const w = window.innerWidth;
       const h = window.innerHeight;
+      
+      // On mobile, scrolling hides/shows address bar, causing only height to change slightly.
+      // We skip resizing the canvas if width hasn't changed to prevent black flashes.
+      if (w === lastW && Math.abs(h - lastH) < 150) return false;
+      
+      lastW = w;
+      lastH = h;
       sizeRef.current = { width: w, height: h };
 
       canvas.width = w * dpr;
@@ -96,6 +105,7 @@ export default function HeroSequence() {
       canvas.style.height = `${h}px`;
 
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      return true;
     };
 
     resizeCanvas();
@@ -239,8 +249,10 @@ export default function HeroSequence() {
 
     // ── Resize ────────────────────────────────────────────────────────────
     const handleResize = () => {
-      resizeCanvas();
-      scheduleFrame();
+      const didResize = resizeCanvas();
+      if (didResize && targetFrameRef.current >= 0) {
+        drawBitmap(targetFrameRef.current);
+      }
     };
 
     window.addEventListener("resize", handleResize, { passive: true });

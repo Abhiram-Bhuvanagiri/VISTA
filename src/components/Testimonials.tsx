@@ -11,9 +11,9 @@ gsap.registerPlugin(ScrollTrigger);
 const portraits = [
   { src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&auto=format&fit=crop", top: "5%", left: "5%", size: "w-24 h-32 md:w-32 md:h-40", delay: 0, rating: "5.0", review: "A trip of a lifetime. The attention to detail was beyond our expectations.", author: "Elena M." },
   { src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop", top: "15%", left: "85%", size: "w-28 h-28 md:w-40 md:h-40", delay: 0.1, rating: "4.8", review: "Seamless travel from start to finish. Highly recommend their services.", author: "Jessica R." },
-  { src: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=400&auto=format&fit=crop", top: "60%", left: "8%", size: "w-28 h-36 md:w-40 md:h-52", delay: 0.2, rating: "4.9", review: "Every recommendation was spot on. We loved every second of it.", author: "Sarah T." },
+  { src: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=400&auto=format&fit=crop", top: "60%", left: "8%", size: "w-28 h-36 md:w-40 md:h-52", delay: 0.2, rating: "4.9", review: "Every recommendation was spot on. We loved every second of it.", author: "David T." },
   { src: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=400&auto=format&fit=crop", top: "35%", left: "10%", size: "w-20 h-24 md:w-28 md:h-36", delay: 0.4, rating: "4.7", review: "Incredible itineraries and top-notch customer support.", author: "Chloe S." },
-  { src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop", top: "70%", left: "80%", size: "w-24 h-32 md:w-32 md:h-44", delay: 0.5, rating: "4.5", review: "They took all the stress out of planning. We just showed up and enjoyed.", author: "Emma L." },
+  { src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop", top: "70%", left: "80%", size: "w-24 h-32 md:w-32 md:h-44", delay: 0.5, rating: "4.5", review: "They took all the stress out of planning. We just showed up and enjoyed.", author: "Justin L." },
   { src: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=400&auto=format&fit=crop", top: "2%", left: "28%", size: "w-20 h-24 md:w-28 md:h-36", delay: 0.7, rating: "4.8", review: "An unforgettable honeymoon experience. Thank you, Vista!", author: "Chris K." },
   { src: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=400&auto=format&fit=crop", top: "5%", left: "65%", size: "w-24 h-24 md:w-32 md:h-32", delay: 0.8, rating: "4.9", review: "Beautiful accommodations and exclusive access we couldn't get elsewhere.", author: "Mark W." },
 ];
@@ -75,7 +75,7 @@ export default function Testimonials() {
   return (
     <section ref={ref} className="relative w-full bg-[#f3f0eb] py-[5px] overflow-hidden flex items-center justify-center min-h-[90vh]">
       {/* Background Portraits Grid */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none max-w-[100rem] mx-auto z-0">
+      <div className="absolute inset-0 w-full h-full pointer-events-none max-w-[100rem] mx-auto z-0 opacity-40 md:opacity-100">
         {portraits.map((p, i) => {
           return (
             <div
