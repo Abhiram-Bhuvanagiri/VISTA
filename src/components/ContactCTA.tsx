@@ -66,20 +66,20 @@ export default function ContactCTA() {
             
             <div>
               {/* ── Section tag ── */}
-              <p className="cta-tag text-[10px] font-light uppercase tracking-[0.3em] text-[#94a3b8] mb-8 flex items-center gap-3 pl-2 md:pl-5">
+              <p className="cta-tag text-[10px] font-light uppercase tracking-[0.3em] text-[#94a3b8] mb-8 flex items-center gap-3" style={{ paddingLeft: "20px" }}>
                 <span className="w-8 h-px bg-[#94a3b8]" />
                 Start Your Journey
               </p>
 
               {/* ── Headline ── */}
-              <h2 className="text-[clamp(3rem,5vw,6rem)] font-light leading-[0.82] tracking-[-0.06em] text-[#0f172a] pl-2 md:pl-5">
+              <h2 className="text-[clamp(3rem,5vw,6rem)] font-light leading-[0.82] tracking-[-0.06em] text-[#0f172a]" style={{ paddingLeft: "20px" }}>
                 Let&apos;s Plan Your <br />
                 <span className="font-light italic text-[#1e3a8a]">Dream Escape</span>
               </h2>
             </div>
 
             {/* Popular destinations */}
-            <div className="pl-2 md:pl-5">
+            <div style={{ paddingLeft: "20px" }}>
               <p className="text-xs font-light uppercase tracking-[0.3em] text-[#94a3b8] mb-5">Popular Destinations</p>
               <div className="flex flex-wrap gap-2 mt-5">
                 {["Swiss Alps", "Santorini", "Kyoto", "Bali", "Maldives", "Amalfi Coast", "Patagonia", "+70 more"].map((tag) => (
@@ -95,7 +95,7 @@ export default function ContactCTA() {
             </div>
 
             {/* Contact details */}
-            <div className="flex flex-col gap-5 pl-2 md:pl-5">
+            <div className="flex flex-col gap-5" style={{ paddingLeft: "20px" }}>
               <p className="text-xs font-light uppercase tracking-[0.3em] text-[#94a3b8] mb-1">Get In Touch Directly</p>
               {[
                 { label: "Email", value: "hello@vistatravel.com" },

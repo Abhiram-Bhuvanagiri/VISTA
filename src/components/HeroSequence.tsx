@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 const FRAME_COUNT = 252;
 const SCROLL_VH = 1000;
 // How many frames to pre-load before showing canvas
-const READY_THRESHOLD = 8;
+const READY_THRESHOLD = 1;
 // Batch size for staggered background loading
 const LOAD_BATCH_SIZE = 20;    // ← was 10; larger batches = fewer setTimeout round-trips
 const LOAD_BATCH_DELAY_MS = 30; // ← was 50; tighter gap keeps loading ahead of scroll
